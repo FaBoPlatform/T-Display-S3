@@ -339,12 +339,12 @@
 <td align="left"><a href="https://chat.openai.com/share/2aa447f8-bf58-4562-a85e-99668d358283" target="_new">ChatGPTによる解説</a></td>
 </tr>
 <tr>
-<td align="left">107〜117行目</td>
+<td align="left">107〜116行目</td>
 <td align="left">LVGLグラフィックライブラリの初期化</td>
 <td align="left"><a href="https://chat.openai.com/share/b30b3f05-d247-4cf1-949b-d0824a58a6dd" target="_new">ChatGPTによる解説</a></td>
 </tr>
 <tr>
-<td align="left">120〜128行目</td>
+<td align="left">119〜127行目</td>
 <td align="left">Textを表示するためのlabelの初期化</td>
 <td align="left"><a href="https://chat.openai.com/share/24789eef-584b-4d53-9cdb-4a799cf1d9c2" target="_new">ChatGPTによる解説</a></td>
 </tr>
@@ -594,28 +594,28 @@
 <span style="color: #f8f8f2">    }</span>
 
 <span style="color: #f8f8f2">    </span><span style="color: #75715e">// LVGLグラフィックライブラリの初期化</span>
-<span style="color: #f8f8f2">    lv_init();</span>
-<span style="color: #f8f8f2">    lv_disp_buf </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> (lv_color_t </span><span style="color: #f92672">*</span><span style="color: #f8f8f2">)heap_caps_malloc(LVGL_LCD_BUF_SIZE </span><span style="color: #f92672">*</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">sizeof</span><span style="color: #f8f8f2">(lv_color_t), MALLOC_CAP_DMA </span><span style="color: #f92672">|</span><span style="color: #f8f8f2"> MALLOC_CAP_INTERNAL);</span>
-<span style="color: #f8f8f2">    lv_disp_draw_buf_init(</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">disp_buf, lv_disp_buf, NULL, LVGL_LCD_BUF_SIZE);</span>
-<span style="color: #f8f8f2">    lv_disp_drv_init(</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">disp_drv);</span>
-<span style="color: #f8f8f2">    disp_drv.hor_res </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> EXAMPLE_LCD_H_RES;</span>
-<span style="color: #f8f8f2">    disp_drv.ver_res </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> EXAMPLE_LCD_V_RES;</span>
-<span style="color: #f8f8f2">    disp_drv.flush_cb </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> example_lvgl_flush_cb;</span>
-<span style="color: #f8f8f2">    disp_drv.draw_buf </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">disp_buf;</span>
-<span style="color: #f8f8f2">    disp_drv.user_data </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> panel_handle;</span>
-<span style="color: #f8f8f2">    lv_disp_drv_register(</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">disp_drv);</span>
-<span style="color: #f8f8f2">    is_initialized_lvgl </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> true;</span>
-
-<span style="color: #f8f8f2">    </span><span style="color: #75715e">// LVGLのラベルを作成し、ディスプレイにスタイルを追加</span>
-<span style="color: #f8f8f2">    log_label </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> lv_label_create(lv_scr_act());</span>
-<span style="color: #f8f8f2">    lv_style_init(</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">style_color);</span>
-<span style="color: #f8f8f2">    lv_style_set_text_color(</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">style_color, lv_color_hex(</span><span style="color: #ae81ff">0xFF10F0</span><span style="color: #f8f8f2">));</span>
-<span style="color: #f8f8f2">    lv_obj_add_style(log_label, </span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">style_color, LV_PART_MAIN);</span>
-<span style="color: #f8f8f2">    lv_obj_align(log_label, LV_ALIGN_TOP_LEFT, </span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">, </span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">);</span>
-<span style="color: #f8f8f2">    lv_obj_set_width(log_label, LV_PCT(</span><span style="color: #ae81ff">100</span><span style="color: #f8f8f2">));</span>
-<span style="color: #f8f8f2">    lv_label_set_long_mode(log_label, LV_LABEL_LONG_SCROLL);</span>
-<span style="color: #f8f8f2">    lv_label_set_recolor(log_label, true);</span>
-<span style="color: #f8f8f2">    lv_label_set_text(log_label, </span><span style="color: #e6db74">&quot;&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_init();</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_disp_buf </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> (lv_color_t </span><span style="color: #f92672">*</span><span style="color: #f8f8f2">)heap_caps_malloc(LVGL_LCD_BUF_SIZE </span><span style="color: #f92672">*</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">sizeof</span><span style="color: #f8f8f2">(lv_color_t), MALLOC_CAP_DMA </span><span style="color: #f92672">|</span><span style="color: #f8f8f2"> MALLOC_CAP_INTERNAL);</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_disp_draw_buf_init(</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">disp_buf, lv_disp_buf, NULL, LVGL_LCD_BUF_SIZE);</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_disp_drv_init(</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">disp_drv);</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    disp_drv.hor_res </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> EXAMPLE_LCD_H_RES;</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    disp_drv.ver_res </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> EXAMPLE_LCD_V_RES;</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    disp_drv.flush_cb </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> example_lvgl_flush_cb;</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    disp_drv.draw_buf </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">disp_buf;</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    disp_drv.user_data </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> panel_handle;</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_disp_drv_register(</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">disp_drv);</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    is_initialized_lvgl </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> true;</span>
+</span><span style="background-color: #49483e">
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    </span><span style="color: #75715e">// LVGLのラベルを作成し、ディスプレイにスタイルを追加</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    log_label </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> lv_label_create(lv_scr_act());</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_style_init(</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">style_color);</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_style_set_text_color(</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">style_color, lv_color_hex(</span><span style="color: #ae81ff">0xFF10F0</span><span style="color: #f8f8f2">));</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_obj_add_style(log_label, </span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">style_color, LV_PART_MAIN);</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_obj_align(log_label, LV_ALIGN_TOP_LEFT, </span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">, </span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">);</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_obj_set_width(log_label, LV_PCT(</span><span style="color: #ae81ff">100</span><span style="color: #f8f8f2">));</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_label_set_long_mode(log_label, LV_LABEL_LONG_SCROLL);</span>
+</span><span style="background-color: #49483e"><span style="color: #f8f8f2">    lv_label_set_recolor(log_label, true);</span>
+</span><span style="color: #f8f8f2">    lv_label_set_text(log_label, </span><span style="color: #e6db74">&quot;&quot;</span><span style="color: #f8f8f2">);</span>
 <span style="color: #f8f8f2">}</span>
 
 <span style="color: #66d9ef">void</span><span style="color: #f8f8f2"> </span><span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">() {   </span>
