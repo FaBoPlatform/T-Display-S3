@@ -6,7 +6,7 @@
 #include "pin_config.h"
 #include "esp_sntp.h"
 
-// Global variables
+// グローバル変数
 esp_lcd_panel_io_handle_t io_handle = NULL;
 static lv_disp_draw_buf_t disp_buf;
 static lv_disp_drv_t disp_drv;
@@ -17,9 +17,10 @@ lv_obj_t *log_label;
 int i = 0;
 
 /**
- * Notifies when LVGL is ready to flush data
+ * LVGLがデータのフラッシュの準備ができたときに通知
  */
 static bool example_notify_lvgl_flush_ready(esp_lcd_panel_io_handle_t panel_io, esp_lcd_panel_io_event_data_t *edata, void *user_ctx) {
+    // LVGLの初期化が完了していれば
     if (is_initialized_lvgl) {
         lv_disp_drv_t *disp_driver = (lv_disp_drv_t *)user_ctx;
         lv_disp_flush_ready(disp_driver);
@@ -28,7 +29,7 @@ static bool example_notify_lvgl_flush_ready(esp_lcd_panel_io_handle_t panel_io, 
 }
 
 /**
- * Callback function to flush LVGL data to LCD
+ * LVGLのデータをLCDにフラッシュするコールバック関数
  */
 static void example_lvgl_flush_cb(lv_disp_drv_t *drv, const lv_area_t *area, lv_color_t *color_map) {
     esp_lcd_panel_handle_t panel_handle = (esp_lcd_panel_handle_t)drv->user_data;
@@ -40,14 +41,16 @@ static void example_lvgl_flush_cb(lv_disp_drv_t *drv, const lv_area_t *area, lv_
 }
 
 void setup() {
-    // Power on configuration   
+    // 電源オンの設定
+    pinMode(PIN_POWER_ON, OUTPUT);
+    digitalWrite(PIN_POWER_ON, HIGH);
     Serial.begin(115200);
 
-    // LCD Configuration: Set LCD Read pin to high
+    // LCDの設定: LCDのReadピンをHighに設定
     pinMode(PIN_LCD_RD, OUTPUT);
     digitalWrite(PIN_LCD_RD, HIGH);
 
-    // Initialize LCD Bus configuration
+    // LCDバスの初期化設定
     esp_lcd_i80_bus_handle_t i80_bus = NULL;
     esp_lcd_i80_bus_config_t bus_config = {
         .dc_gpio_num = PIN_LCD_DC,
@@ -62,7 +65,7 @@ void setup() {
         .sram_trans_align = 0
     };
 
-    // Create and initialize LCD Bus and IO
+    // LCDバスとIOの作成と初期化
     esp_lcd_new_i80_bus(&bus_config, &i80_bus);
     esp_lcd_panel_io_i80_config_t io_config = {
         .cs_gpio_num = PIN_LCD_CS,
@@ -76,7 +79,7 @@ void setup() {
     };
     ESP_ERROR_CHECK(esp_lcd_new_panel_io_i80(i80_bus, &io_config, &io_handle));
     
-    // Initialize and configure LCD Panel
+    // LCDパネルの初期化と設定
     esp_lcd_panel_handle_t panel_handle = NULL;
     esp_lcd_panel_dev_config_t panel_config = {
         .reset_gpio_num = PIN_LCD_RES,
@@ -92,7 +95,7 @@ void setup() {
     esp_lcd_panel_mirror(panel_handle, false, true);
     esp_lcd_panel_set_gap(panel_handle, 0, 35);
 
-    // Gradually illuminate the screen
+    // 画面を徐々に点灯させる
     ledcSetup(0, 10000, 8);
     ledcAttachPin(PIN_LCD_BL, 0);
     for (uint8_t i = 0; i < 0xFF; i++) {
@@ -100,7 +103,7 @@ void setup() {
         delay(2);
     }
 
-    // Initialize LVGL graphics library
+    // LVGLグラフィックライブラリの初期化
     lv_init();
     lv_disp_buf = (lv_color_t *)heap_caps_malloc(LVGL_LCD_BUF_SIZE * sizeof(lv_color_t), MALLOC_CAP_DMA | MALLOC_CAP_INTERNAL);
     lv_disp_draw_buf_init(&disp_buf, lv_disp_buf, NULL, LVGL_LCD_BUF_SIZE);
@@ -113,7 +116,7 @@ void setup() {
     lv_disp_drv_register(&disp_drv);
     is_initialized_lvgl = true;
 
-    // Create and style an LVGL label for display
+    // LVGLのラベルを作成し、ディスプレイにスタイルを追加
     log_label = lv_label_create(lv_scr_act());
     lv_style_init(&style_color);
     lv_style_set_text_color(&style_color, lv_color_hex(0xFF10F0));
