@@ -12,7 +12,7 @@ static lv_disp_draw_buf_t disp_buf;
 static lv_disp_drv_t disp_drv;
 static lv_color_t *lv_disp_buf;
 static bool is_initialized_lvgl = false;
-lv_style_t style_color;
+lv_style_t log_style;
 lv_obj_t *log_label;
 int i = 0;
 
@@ -44,7 +44,6 @@ void setup() {
     // 電源オンの設定
     pinMode(PIN_POWER_ON, OUTPUT);
     digitalWrite(PIN_POWER_ON, HIGH);
-    Serial.begin(115200);
 
     // LCDの設定: LCDのReadピンをHighに設定
     pinMode(PIN_LCD_RD, OUTPUT);
@@ -118,9 +117,9 @@ void setup() {
 
     // LVGLのラベルを作成し、ディスプレイにスタイルを追加
     log_label = lv_label_create(lv_scr_act());
-    lv_style_init(&style_color);
-    lv_style_set_text_color(&style_color, lv_color_hex(0xFF10F0));
-    lv_obj_add_style(log_label, &style_color, LV_PART_MAIN);
+    lv_style_init(&log_style);
+    lv_style_set_text_color(&log_style, lv_color_hex(0xFF10F0));
+    lv_obj_add_style(log_label, &log_style, LV_PART_MAIN);
     lv_obj_align(log_label, LV_ALIGN_TOP_LEFT, 0, 0);
     lv_obj_set_width(log_label, LV_PCT(100));
     lv_label_set_long_mode(log_label, LV_LABEL_LONG_SCROLL);
@@ -133,5 +132,5 @@ void loop() {
     lv_timer_handler();
     String msg = "Hello World\n" + String(i);
     lv_label_set_text(log_label, msg.c_str());
-    delay(1000);
+    delay(100);
 }
