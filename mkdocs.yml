@@ -31,6 +31,10 @@ extra_css:
   - "css/custom.css"
 nav:
   - Home: "index.md"
+  - 初期の設定:
+    - Arduino IDEの設定: "lilygo/setting.md"
+  - 初期のサンプル:
+    - 時計: "lilygo/clock.md"
   - Arduino:
     - Hello World: "arduino/helloworld.md"
     - ボタン: "arduino/button.md"
