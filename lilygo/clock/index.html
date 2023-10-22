@@ -1,0 +1,1678 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../setting/">
+      
+      
+        <link rel="next" href="../../arduino/helloworld/">
+      
+      <link rel="icon" href="../../favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>時計 - FaBo T-Display-S3 Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../css/version-select.css">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="black">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#clock" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="FaBo T-Display-S3 Docs" class="md-header__button md-logo" aria-label="FaBo T-Display-S3 Docs" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FaBo T-Display-S3 Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              時計
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FaBo T-Display-S3 Docs" class="md-nav__button md-logo" aria-label="FaBo T-Display-S3 Docs" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    FaBo T-Display-S3 Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          初期の設定
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          初期の設定
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting/" class="md-nav__link">
+        Arduino IDEの設定
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          初期のサンプル
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          初期のサンプル
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          時計
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        時計
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ファイル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ソースコード
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Arduino
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Arduino
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arduino/helloworld/" class="md-nav__link">
+        Hello World
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arduino/button/" class="md-nav__link">
+        ボタン
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arduino/circle/" class="md-nav__link">
+        円の描画
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arduino/screen/" class="md-nav__link">
+        画面の切替
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ファイル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ソースコード
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="clock">Clock</h1>
+<h2 id="_1">ファイル</h2>
+<table>
+<thead>
+<tr>
+<th align="left">No</th>
+<th align="left">修正が必要なファイル</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Factory.ino</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">pin_config.h</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">ソースコード</h2>
+<p>39と368行目を書き直します。</p>
+<p><code>Factory.ino</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span>
+<span class="normal">494</span>
+<span class="normal">495</span>
+<span class="normal">496</span>
+<span class="normal">497</span>
+<span class="normal">498</span>
+<span class="normal">499</span>
+<span class="normal">500</span>
+<span class="normal">501</span>
+<span class="normal">502</span>
+<span class="normal">503</span>
+<span class="normal">504</span>
+<span class="normal">505</span>
+<span class="normal">506</span>
+<span class="normal">507</span>
+<span class="normal">508</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cm">/* Please make sure your touch IC model. */</span>
+<span class="c1">// If you don&#39;t have a touch panel, you don&#39;t need to define a touch model</span>
+<span class="c1">// #define TOUCH_MODULES_CST_MUTUAL</span>
+<span class="c1">// #define TOUCH_MODULES_CST_SELF</span>
+
+<span class="cp">#if defined(TOUCH_MODULES_CST_MUTUAL) ||defined(TOUCH_MODULES_CST_SELF)</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TouchLib.h&quot;</span>
+<span class="cp">#endif</span>
+<span class="c1">// #define TOUCH_READ_FROM_INTERRNUPT</span>
+
+<span class="cm">/* The product now has two screens, and the initialization code needs a small change in the new version. The LCD_MODULE_CMD_1 is used to define the</span>
+<span class="cm"> * switch macro. */</span>
+<span class="cp">#define LCD_MODULE_CMD_1</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;OneButton.h&quot;</span><span class="c1"> /* https://github.com/mathertel/OneButton.git */</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lvgl.h&quot;</span><span class="c1">      /* https://github.com/lvgl/lvgl.git */</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Arduino.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;SD_MMC.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;WiFi.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Wire.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_lcd_panel_io.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_lcd_panel_ops.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_lcd_panel_vendor.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;factory_gui.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pin_config.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_sntp.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;time.h&quot;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;zones.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;HTTPClient.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFiClientSecure.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;esp_wifi.h&gt;</span>
+
+<span class="c1">// The factory program uses the Chinese time zone by default.</span>
+<span class="c1">// Commenting this line will automatically get the time zone, provided that the SSL certificate is valid.</span>
+<span class="c1">// Please pay attention to check the validity of the certificate.</span>
+<span class="c1">// The current configuration certificate is valid until April 16, 2024</span>
+<span class="hll"><span class="cp">#define CUSTOM_TIMEZONE         &quot;JST-9&quot;</span>
+</span>
+
+<span class="n">esp_lcd_panel_io_handle_t</span><span class="w"> </span><span class="n">io_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="k">static</span><span class="w"> </span><span class="n">lv_disp_draw_buf_t</span><span class="w"> </span><span class="n">disp_buf</span><span class="p">;</span><span class="w"> </span><span class="c1">// contains internal graphic buffer(s) called draw buffer(s)</span>
+<span class="k">static</span><span class="w"> </span><span class="n">lv_disp_drv_t</span><span class="w"> </span><span class="n">disp_drv</span><span class="p">;</span><span class="w">      </span><span class="c1">// contains callback functions</span>
+<span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="o">*</span><span class="n">lv_disp_buf</span><span class="p">;</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_initialized_lvgl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="n">OneButton</span><span class="w"> </span><span class="nf">button1</span><span class="p">(</span><span class="n">PIN_BUTTON_1</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+<span class="n">OneButton</span><span class="w"> </span><span class="nf">button2</span><span class="p">(</span><span class="n">PIN_BUTTON_2</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+<span class="cp">#if defined(LCD_MODULE_CMD_1)</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">cmd</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">14</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">len</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">lcd_cmd_t</span><span class="p">;</span>
+
+<span class="n">lcd_cmd_t</span><span class="w"> </span><span class="n">lcd_st7789v</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0x11</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mh">0x80</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0x3A</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0X05</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xB2</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0X0B</span><span class="p">,</span><span class="w"> </span><span class="mh">0X0B</span><span class="p">,</span><span class="w"> </span><span class="mh">0X00</span><span class="p">,</span><span class="w"> </span><span class="mh">0X33</span><span class="p">,</span><span class="w"> </span><span class="mh">0X33</span><span class="p">},</span><span class="w"> </span><span class="mi">5</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xB7</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0X75</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xBB</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0X28</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xC0</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0X2C</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xC2</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0X01</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xC3</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0X1F</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xC6</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0X13</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xD0</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0XA7</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xD0</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0XA4</span><span class="p">,</span><span class="w"> </span><span class="mh">0XA1</span><span class="p">},</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xD6</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0XA1</span><span class="p">},</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xE0</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0XF0</span><span class="p">,</span><span class="w"> </span><span class="mh">0X05</span><span class="p">,</span><span class="w"> </span><span class="mh">0X0A</span><span class="p">,</span><span class="w"> </span><span class="mh">0X06</span><span class="p">,</span><span class="w"> </span><span class="mh">0X06</span><span class="p">,</span><span class="w"> </span><span class="mh">0X03</span><span class="p">,</span><span class="w"> </span><span class="mh">0X2B</span><span class="p">,</span><span class="w"> </span><span class="mh">0X32</span><span class="p">,</span><span class="w"> </span><span class="mh">0X43</span><span class="p">,</span><span class="w"> </span><span class="mh">0X36</span><span class="p">,</span><span class="w"> </span><span class="mh">0X11</span><span class="p">,</span><span class="w"> </span><span class="mh">0X10</span><span class="p">,</span><span class="w"> </span><span class="mh">0X2B</span><span class="p">,</span><span class="w"> </span><span class="mh">0X32</span><span class="p">},</span><span class="w"> </span><span class="mi">14</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mh">0xE1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mh">0XF0</span><span class="p">,</span><span class="w"> </span><span class="mh">0X08</span><span class="p">,</span><span class="w"> </span><span class="mh">0X0C</span><span class="p">,</span><span class="w"> </span><span class="mh">0X0B</span><span class="p">,</span><span class="w"> </span><span class="mh">0X09</span><span class="p">,</span><span class="w"> </span><span class="mh">0X24</span><span class="p">,</span><span class="w"> </span><span class="mh">0X2B</span><span class="p">,</span><span class="w"> </span><span class="mh">0X22</span><span class="p">,</span><span class="w"> </span><span class="mh">0X43</span><span class="p">,</span><span class="w"> </span><span class="mh">0X38</span><span class="p">,</span><span class="w"> </span><span class="mh">0X15</span><span class="p">,</span><span class="w"> </span><span class="mh">0X16</span><span class="p">,</span><span class="w"> </span><span class="mh">0X2F</span><span class="p">,</span><span class="w"> </span><span class="mh">0X37</span><span class="p">},</span><span class="w"> </span><span class="mi">14</span><span class="p">},</span>
+
+<span class="p">};</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#if defined(TOUCH_MODULES_CST_MUTUAL)</span>
+<span class="n">TouchLib</span><span class="w"> </span><span class="nf">touch</span><span class="p">(</span><span class="n">Wire</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_IIC_SDA</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_IIC_SCL</span><span class="p">,</span><span class="w"> </span><span class="n">CTS328_SLAVE_ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_TOUCH_RES</span><span class="p">);</span>
+<span class="cp">#elif defined(TOUCH_MODULES_CST_SELF)</span>
+<span class="n">TouchLib</span><span class="w"> </span><span class="nf">touch</span><span class="p">(</span><span class="n">Wire</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_IIC_SDA</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_IIC_SCL</span><span class="p">,</span><span class="w"> </span><span class="n">CTS820_SLAVE_ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_TOUCH_RES</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="cp">#warning &quot;Touch models are not currently configured, use the sketch without touch panel&quot;</span>
+<span class="cp">#endif</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">inited_touch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">inited_sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="cp">#if defined(TOUCH_READ_FROM_INTERRNUPT)</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">get_int_signal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">wifi_test</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">timeavailable</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">timeval</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">printLocalTime</span><span class="p">();</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">SmartConfig</span><span class="p">();</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setTimezone</span><span class="p">();</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">example_notify_lvgl_flush_ready</span><span class="p">(</span><span class="n">esp_lcd_panel_io_handle_t</span><span class="w"> </span><span class="n">panel_io</span><span class="p">,</span><span class="w"> </span><span class="n">esp_lcd_panel_io_event_data_t</span><span class="w"> </span><span class="o">*</span><span class="n">edata</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">user_ctx</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is_initialized_lvgl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">lv_disp_drv_t</span><span class="w"> </span><span class="o">*</span><span class="n">disp_driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">lv_disp_drv_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">user_ctx</span><span class="p">;</span>
+<span class="w">        </span><span class="n">lv_disp_flush_ready</span><span class="p">(</span><span class="n">disp_driver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">example_lvgl_flush_cb</span><span class="p">(</span><span class="n">lv_disp_drv_t</span><span class="w"> </span><span class="o">*</span><span class="n">drv</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lv_area_t</span><span class="w"> </span><span class="o">*</span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="o">*</span><span class="n">color_map</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">esp_lcd_panel_handle_t</span><span class="w"> </span><span class="n">panel_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">esp_lcd_panel_handle_t</span><span class="p">)</span><span class="n">drv</span><span class="o">-&gt;</span><span class="n">user_data</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">offsetx1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">area</span><span class="o">-&gt;</span><span class="n">x1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">offsetx2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">area</span><span class="o">-&gt;</span><span class="n">x2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">offsety1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">area</span><span class="o">-&gt;</span><span class="n">y1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">offsety2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">area</span><span class="o">-&gt;</span><span class="n">y2</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// copy a buffer&#39;s content to a specific area of the display</span>
+<span class="w">    </span><span class="n">esp_lcd_panel_draw_bitmap</span><span class="p">(</span><span class="n">panel_handle</span><span class="p">,</span><span class="w"> </span><span class="n">offsetx1</span><span class="p">,</span><span class="w"> </span><span class="n">offsety1</span><span class="p">,</span><span class="w"> </span><span class="n">offsetx2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">offsety2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">color_map</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cp">#if defined(TOUCH_MODULES_CST_MUTUAL) ||defined(TOUCH_MODULES_CST_SELF)</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">lv_touchpad_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="n">indev_driver</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if defined(TOUCH_READ_FROM_INTERRNUPT)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">get_int_signal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">get_int_signal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">        </span><span class="n">touch</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">touch</span><span class="p">.</span><span class="n">read</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#endif</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">str_buf</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">fn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">touch</span><span class="p">.</span><span class="n">getPointNum</span><span class="p">();</span>
+<span class="w">        </span><span class="n">str_buf</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot; Finger num : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fn</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">TP_Point</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">touch</span><span class="p">.</span><span class="n">getPoint</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">            </span><span class="n">str_buf</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;x: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; y: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; p: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">pressure</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">TP_Point</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">touch</span><span class="p">.</span><span class="n">getPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">point</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">point</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LV_INDEV_STATE_PR</span><span class="p">;</span>
+<span class="w">        </span><span class="n">lv_msg_send</span><span class="p">(</span><span class="n">MSG_NEW_TOUCH_POINT</span><span class="p">,</span><span class="w"> </span><span class="n">str_buf</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LV_INDEV_STATE_REL</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+
+<span class="kt">void</span><span class="w"> </span><span class="n">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// (POWER ON)IO15 must be set to HIGH before starting, otherwise the screen will not display when using battery</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_POWER_ON</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_POWER_ON</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">sntp_servermode_dhcp</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// (optional)</span>
+<span class="w">    </span><span class="n">configTime</span><span class="p">(</span><span class="n">GMT_OFFSET_SEC</span><span class="p">,</span><span class="w"> </span><span class="n">DAY_LIGHT_OFFSET_SEC</span><span class="p">,</span><span class="w"> </span><span class="n">NTP_SERVER1</span><span class="p">,</span><span class="w"> </span><span class="n">NTP_SERVER2</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_LCD_RD</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_LCD_RD</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="n">esp_lcd_i80_bus_handle_t</span><span class="w"> </span><span class="n">i80_bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="n">esp_lcd_i80_bus_config_t</span><span class="w"> </span><span class="n">bus_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">dc_gpio_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PIN_LCD_DC</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">wr_gpio_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PIN_LCD_WR</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">clk_src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LCD_CLK_SRC_PLL160M</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">data_gpio_nums</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">PIN_LCD_D0</span><span class="p">,</span>
+<span class="w">            </span><span class="n">PIN_LCD_D1</span><span class="p">,</span>
+<span class="w">            </span><span class="n">PIN_LCD_D2</span><span class="p">,</span>
+<span class="w">            </span><span class="n">PIN_LCD_D3</span><span class="p">,</span>
+<span class="w">            </span><span class="n">PIN_LCD_D4</span><span class="p">,</span>
+<span class="w">            </span><span class="n">PIN_LCD_D5</span><span class="p">,</span>
+<span class="w">            </span><span class="n">PIN_LCD_D6</span><span class="p">,</span>
+<span class="w">            </span><span class="n">PIN_LCD_D7</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">.</span><span class="n">bus_width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">max_transfer_bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LVGL_LCD_BUF_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">uint16_t</span><span class="p">),</span>
+<span class="w">        </span><span class="p">.</span><span class="n">psram_trans_align</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">sram_trans_align</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="n">esp_lcd_new_i80_bus</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bus_config</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i80_bus</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">esp_lcd_panel_io_i80_config_t</span><span class="w"> </span><span class="n">io_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">cs_gpio_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PIN_LCD_CS</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">pclk_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EXAMPLE_LCD_PIXEL_CLOCK_HZ</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">trans_queue_depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">on_color_trans_done</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">example_notify_lvgl_flush_ready</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">user_ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">disp_drv</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">lcd_cmd_bits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">lcd_param_bits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">dc_levels</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="p">.</span><span class="n">dc_idle_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="p">.</span><span class="n">dc_cmd_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="p">.</span><span class="n">dc_dummy_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="p">.</span><span class="n">dc_data_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="n">esp_lcd_new_panel_io_i80</span><span class="p">(</span><span class="n">i80_bus</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">io_config</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">io_handle</span><span class="p">));</span>
+<span class="w">    </span><span class="n">esp_lcd_panel_handle_t</span><span class="w"> </span><span class="n">panel_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="n">esp_lcd_panel_dev_config_t</span><span class="w"> </span><span class="n">panel_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">reset_gpio_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PIN_LCD_RES</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">color_space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESP_LCD_COLOR_SPACE_RGB</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">bits_per_pixel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">vendor_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="n">esp_lcd_new_panel_st7789</span><span class="p">(</span><span class="n">io_handle</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">panel_config</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">panel_handle</span><span class="p">);</span>
+<span class="w">    </span><span class="n">esp_lcd_panel_reset</span><span class="p">(</span><span class="n">panel_handle</span><span class="p">);</span>
+<span class="w">    </span><span class="n">esp_lcd_panel_init</span><span class="p">(</span><span class="n">panel_handle</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">esp_lcd_panel_invert_color</span><span class="p">(</span><span class="n">panel_handle</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">esp_lcd_panel_swap_xy</span><span class="p">(</span><span class="n">panel_handle</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">//The screen faces you, and the USB is on the left</span>
+<span class="w">    </span><span class="n">esp_lcd_panel_mirror</span><span class="p">(</span><span class="n">panel_handle</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">//The screen faces you, the USB is to the right</span>
+<span class="w">    </span><span class="c1">// esp_lcd_panel_mirror(panel_handle, true, false);</span>
+
+<span class="w">    </span><span class="c1">// the gap is LCD panel specific, even panels with the same driver IC, can</span>
+<span class="w">    </span><span class="c1">// have different gap value</span>
+<span class="w">    </span><span class="n">esp_lcd_panel_set_gap</span><span class="p">(</span><span class="n">panel_handle</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">);</span>
+<span class="cp">#if defined(LCD_MODULE_CMD_1)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">lcd_st7789v</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">lcd_cmd_t</span><span class="p">));</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">esp_lcd_panel_io_tx_param</span><span class="p">(</span><span class="n">io_handle</span><span class="p">,</span><span class="w"> </span><span class="n">lcd_st7789v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cmd</span><span class="p">,</span><span class="w"> </span><span class="n">lcd_st7789v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">lcd_st7789v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x7f</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lcd_st7789v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x80</span><span class="p">)</span>
+<span class="w">            </span><span class="n">delay</span><span class="p">(</span><span class="mi">120</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="cm">/* Lighten the screen with gradient */</span>
+<span class="w">    </span><span class="n">ledcSetup</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ledcAttachPin</span><span class="p">(</span><span class="n">PIN_LCD_BL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ledcWrite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">lv_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">lv_disp_buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">lv_color_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">heap_caps_malloc</span><span class="p">(</span><span class="n">LVGL_LCD_BUF_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">lv_color_t</span><span class="p">),</span><span class="w"> </span><span class="n">MALLOC_CAP_DMA</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">MALLOC_CAP_INTERNAL</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">lv_disp_draw_buf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">disp_buf</span><span class="p">,</span><span class="w"> </span><span class="n">lv_disp_buf</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">LVGL_LCD_BUF_SIZE</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/*Initialize the display*/</span>
+<span class="w">    </span><span class="n">lv_disp_drv_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">disp_drv</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/*Change the following line to your display resolution*/</span>
+<span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">hor_res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EXAMPLE_LCD_H_RES</span><span class="p">;</span>
+<span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">ver_res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EXAMPLE_LCD_V_RES</span><span class="p">;</span>
+<span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">flush_cb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">example_lvgl_flush_cb</span><span class="p">;</span>
+<span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">draw_buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">disp_buf</span><span class="p">;</span>
+<span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">user_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">panel_handle</span><span class="p">;</span>
+<span class="w">    </span><span class="n">lv_disp_drv_register</span><span class="p">(</span><span class="o">&amp;</span><span class="n">disp_drv</span><span class="p">);</span>
+
+<span class="cp">#if defined(TOUCH_MODULES_CST_MUTUAL) || defined(TOUCH_MODULES_CST_SELF)</span>
+<span class="w">    </span><span class="cm">/* Register touch brush with LVGL */</span>
+<span class="w">    </span><span class="c1">// Wire.begin(PIN_IIC_SDA, PIN_IIC_SCL, 800000);</span>
+<span class="w">    </span><span class="n">inited_touch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">touch</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inited_touch</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">touch</span><span class="p">.</span><span class="n">setRotation</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">;</span>
+<span class="w">        </span><span class="n">lv_indev_drv_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">indev_drv</span><span class="p">);</span>
+<span class="w">        </span><span class="n">indev_drv</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LV_INDEV_TYPE_POINTER</span><span class="p">;</span>
+<span class="w">        </span><span class="n">indev_drv</span><span class="p">.</span><span class="n">read_cb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lv_touchpad_read</span><span class="p">;</span>
+<span class="w">        </span><span class="n">lv_indev_drv_register</span><span class="p">(</span><span class="o">&amp;</span><span class="n">indev_drv</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="cp">#if defined(TOUCH_READ_FROM_INTERRNUPT)</span>
+<span class="w">    </span><span class="n">attachInterrupt</span><span class="p">(</span>
+<span class="w">        </span><span class="n">PIN_TOUCH_INT</span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">get_int_signal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">FALLING</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="n">is_initialized_lvgl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+
+<span class="w">    </span><span class="n">SD_MMC</span><span class="p">.</span><span class="n">setPins</span><span class="p">(</span><span class="n">PIN_SD_CLK</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_SD_CMD</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_SD_D0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">inited_sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SD_MMC</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="s">&quot;/sdcard&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">wifi_test</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">button1</span><span class="p">.</span><span class="n">attachClick</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_POWER_ON</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">        </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_LCD_BL</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_POWER_ON</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_LCD_BL</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">        </span><span class="n">esp_sleep_enable_ext0_wakeup</span><span class="p">((</span><span class="n">gpio_num_t</span><span class="p">)</span><span class="n">PIN_BUTTON_2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1 = High, 0 = Low</span>
+<span class="w">        </span><span class="n">esp_deep_sleep_start</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="n">button2</span><span class="p">.</span><span class="n">attachClick</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ui_switch_page</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">lv_timer_handler</span><span class="p">();</span>
+<span class="w">    </span><span class="n">button1</span><span class="p">.</span><span class="n">tick</span><span class="p">();</span>
+<span class="w">    </span><span class="n">button2</span><span class="p">.</span><span class="n">tick</span><span class="p">();</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">last_tick</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">last_tick</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">struct</span><span class="w"> </span><span class="nc">tm</span><span class="w"> </span><span class="n">timeinfo</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">getLocalTime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timeinfo</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">lv_msg_send</span><span class="p">(</span><span class="n">MSG_NEW_HOUR</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">timeinfo</span><span class="p">.</span><span class="n">tm_hour</span><span class="p">);</span>
+<span class="w">            </span><span class="n">lv_msg_send</span><span class="p">(</span><span class="n">MSG_NEW_MIN</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">timeinfo</span><span class="p">.</span><span class="n">tm_min</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">volt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">analogRead</span><span class="p">(</span><span class="n">PIN_BAT_VOLT</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4096</span><span class="p">;</span>
+<span class="w">        </span><span class="n">lv_msg_send</span><span class="p">(</span><span class="n">MSG_NEW_VOLT</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">volt</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">last_tick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">LV_IMG_DECLARE</span><span class="p">(</span><span class="n">lilygo2_gif</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">wifi_test</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">;</span>
+<span class="w">    </span><span class="n">lv_obj_t</span><span class="w"> </span><span class="o">*</span><span class="n">logo_img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lv_gif_create</span><span class="p">(</span><span class="n">lv_scr_act</span><span class="p">());</span>
+<span class="w">    </span><span class="n">lv_obj_center</span><span class="p">(</span><span class="n">logo_img</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_gif_set_src</span><span class="p">(</span><span class="n">logo_img</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lilygo2_gif</span><span class="p">);</span>
+<span class="w">    </span><span class="n">LV_DELAY</span><span class="p">(</span><span class="mi">1200</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_obj_del</span><span class="p">(</span><span class="n">logo_img</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">lv_obj_t</span><span class="w"> </span><span class="o">*</span><span class="n">log_label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lv_label_create</span><span class="p">(</span><span class="n">lv_scr_act</span><span class="p">());</span>
+<span class="w">    </span><span class="n">lv_obj_align</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">LV_ALIGN_TOP_LEFT</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_obj_set_width</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">LV_PCT</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+<span class="w">    </span><span class="n">lv_label_set_long_mode</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">LV_LABEL_LONG_SCROLL</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_label_set_recolor</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scan WiFi&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">LV_DELAY</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">WiFi</span><span class="p">.</span><span class="n">mode</span><span class="p">(</span><span class="n">WIFI_STA</span><span class="p">);</span>
+<span class="w">    </span><span class="n">WiFi</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WiFi</span><span class="p">.</span><span class="n">scanNetworks</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;scan done&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;no networks found&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot; networks found</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">WiFi</span><span class="p">.</span><span class="n">SSID</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot; (&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">WiFi</span><span class="p">.</span><span class="n">RSSI</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">encryptionType</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">WIFI_AUTH_OPEN</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot; </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;*</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">wifi_config_t</span><span class="w"> </span><span class="n">current_conf</span><span class="p">;</span>
+<span class="w">    </span><span class="n">esp_wifi_get_config</span><span class="p">(</span><span class="n">WIFI_IF_STA</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">current_conf</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">strlen</span><span class="p">((</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">current_conf</span><span class="p">.</span><span class="n">sta</span><span class="p">.</span><span class="n">ssid</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Just for testing.</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Use default WiFi SSID &amp; PASSWORD!!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">WIFI_SSID</span><span class="p">,</span><span class="w"> </span><span class="n">WIFI_PASSWORD</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Begin WiFi&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="n">LV_DELAY</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="w">    </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Connecting to &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Connecting to &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="n">current_conf</span><span class="p">.</span><span class="n">sta</span><span class="p">.</span><span class="n">ssid</span><span class="p">);</span>
+<span class="w">    </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">((</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="n">current_conf</span><span class="p">.</span><span class="n">sta</span><span class="p">.</span><span class="n">ssid</span><span class="p">));</span>
+<span class="hll"><span class="w">    </span><span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">WIFI_SSID</span><span class="p">,</span><span class="w"> </span><span class="n">WIFI_PASSWORD</span><span class="p">);</span>
+</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">last_tick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_smartconfig_connect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">lv_label_set_long_mode</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">LV_LABEL_LONG_WRAP</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WL_CONNECTED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">        </span><span class="n">LV_DELAY</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">last_tick</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">WIFI_CONNECT_WAIT_MAX</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* Automatically start smartconfig when connection times out */</span>
+<span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Connection timed out, start smartconfig&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">            </span><span class="n">LV_DELAY</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">            </span><span class="n">is_smartconfig_connect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">WiFi</span><span class="p">.</span><span class="n">mode</span><span class="p">(</span><span class="n">WIFI_AP_STA</span><span class="p">);</span>
+<span class="w">            </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\r\n</span><span class="s"> wait for smartconfig....&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\r\n</span><span class="s"> wait for smartconfig....&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Please use #ff0000 EspTouch# Apps to connect to the distribution network&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">            </span><span class="n">WiFi</span><span class="p">.</span><span class="n">beginSmartConfig</span><span class="p">();</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">LV_DELAY</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">smartConfigDone</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\r\n</span><span class="s">SmartConfig Success</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;SSID:%s</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">WiFi</span><span class="p">.</span><span class="n">SSID</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">                    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;PSW:%s</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">WiFi</span><span class="p">.</span><span class="n">psk</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">                    </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">SmartConfig Success&quot;</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">SSID:&quot;</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">WiFi</span><span class="p">.</span><span class="n">SSID</span><span class="p">().</span><span class="n">c_str</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">PSW:&quot;</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">WiFi</span><span class="p">.</span><span class="n">psk</span><span class="p">().</span><span class="n">c_str</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">                    </span><span class="n">LV_DELAY</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">last_tick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">is_smartconfig_connect</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">CONNECTED </span><span class="se">\n</span><span class="s">Takes &quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s"> CONNECTED </span><span class="se">\n</span><span class="s">Takes &quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">last_tick</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">last_tick</span><span class="p">);</span>
+<span class="w">        </span><span class="n">text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot; ms</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; millseconds&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">LV_DELAY</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="w">    </span><span class="n">setTimezone</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ui_begin</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">printLocalTime</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">tm</span><span class="w"> </span><span class="n">timeinfo</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">getLocalTime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timeinfo</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;No time available (yet)&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timeinfo</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%A, %B %d %Y %H:%M:%S&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// Callback function (get&#39;s called when time adjusts via NTP)</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">timeavailable</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">timeval</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Got time adjustment from NTP!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printLocalTime</span><span class="p">();</span>
+<span class="w">    </span><span class="n">WiFi</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">setTimezone</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#ifdef CUSTOM_TIMEZONE</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">timezone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CUSTOM_TIMEZONE</span><span class="p">;</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">rootCACertificate</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="s">&quot;-----BEGIN CERTIFICATE-----</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;MIIDzTCCArWgAwIBAgIQCjeHZF5ftIwiTv0b7RQMPDANBgkqhkiG9w0BAQsFADBa</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;MQswCQYDVQQGEwJJRTESMBAGA1UEChMJQmFsdGltb3JlMRMwEQYDVQQLEwpDeWJl</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;clRydXN0MSIwIAYDVQQDExlCYWx0aW1vcmUgQ3liZXJUcnVzdCBSb290MB4XDTIw</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;MDEyNzEyNDgwOFoXDTI0MTIzMTIzNTk1OVowSjELMAkGA1UEBhMCVVMxGTAXBgNV</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;BAoTEENsb3VkZmxhcmUsIEluYy4xIDAeBgNVBAMTF0Nsb3VkZmxhcmUgSW5jIEVD</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;QyBDQS0zMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEua1NZpkUC0bsH4HRKlAe</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;nQMVLzQSfS2WuIg4m4Vfj7+7Te9hRsTJc9QkT+DuHM5ss1FxL2ruTAUJd9NyYqSb</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;16OCAWgwggFkMB0GA1UdDgQWBBSlzjfq67B1DpRniLRF+tkkEIeWHzAfBgNVHSME</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;GDAWgBTlnVkwgkdYzKz6CFQ2hns6tQRN8DAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0l</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;BBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMBIGA1UdEwEB/wQIMAYBAf8CAQAwNAYI</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;KwYBBQUHAQEEKDAmMCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5j</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;b20wOgYDVR0fBDMwMTAvoC2gK4YpaHR0cDovL2NybDMuZGlnaWNlcnQuY29tL09t</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;bmlyb290MjAyNS5jcmwwbQYDVR0gBGYwZDA3BglghkgBhv1sAQEwKjAoBggrBgEF</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;BQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzALBglghkgBhv1sAQIw</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;CAYGZ4EMAQIBMAgGBmeBDAECAjAIBgZngQwBAgMwDQYJKoZIhvcNAQELBQADggEB</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;AAUkHd0bsCrrmNaF4zlNXmtXnYJX/OvoMaJXkGUFvhZEOFp3ArnPEELG4ZKk40Un</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;+ABHLGioVplTVI+tnkDB0A+21w0LOEhsUCxJkAZbZB2LzEgwLt4I4ptJIsCSDBFe</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;lpKU1fwg3FZs5ZKTv3ocwDfjhUkV+ivhdDkYD7fa86JXWGBPzI6UAPxGezQxPk1H</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;goE6y/SJXQ7vTQ1unBuCJN0yJV0ReFEQPaA1IwQvZW+cwdFD19Ae8zFnWSfda9J1</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;CZMRJCQUzym+5iPDuI9yP+kHyCREU3qzuWFloUwOxkgAyXVjBYdwRVKD05WdRerw</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;6DEdfgkfCv4+3ao8XnTSrLE=</span><span class="se">\r\n</span><span class="s">&quot;</span>\
+<span class="w">        </span><span class="s">&quot;-----END CERTIFICATE-----</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">WiFiClientSecure</span><span class="w"> </span><span class="o">*</span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">WiFiClientSecure</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">timezone</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">client</span><span class="o">-&gt;</span><span class="n">setCACert</span><span class="p">(</span><span class="n">rootCACertificate</span><span class="p">);</span>
+<span class="w">        </span><span class="n">HTTPClient</span><span class="w"> </span><span class="n">https</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">https</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="o">*</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">GET_TIMEZONE_API</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">httpCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">https</span><span class="p">.</span><span class="n">GET</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">httpCode</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// HTTP header has been send and Server response header has been handled</span>
+<span class="w">                </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[HTTPS] GET... code: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">httpCode</span><span class="p">);</span>
+
+<span class="w">                </span><span class="c1">// file found at server</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">httpCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HTTP_CODE_OK</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">httpCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HTTP_CODE_MOVED_PERMANENTLY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">https</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">payload</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">timezone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[HTTPS] GET... failed, error: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">https</span><span class="p">.</span><span class="n">errorToString</span><span class="p">(</span><span class="n">httpCode</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">https</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">delete</span><span class="w"> </span><span class="n">client</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">zones</span><span class="p">);</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">timezone</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;None&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">timezone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;CST-8&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">timezone</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">zones</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">timezone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zones</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">zones</span><span class="p">;</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;timezone : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">timezone</span><span class="p">);</span>
+<span class="w">    </span><span class="n">setenv</span><span class="p">(</span><span class="s">&quot;TZ&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">timezone</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// set time zone</span>
+<span class="w">    </span><span class="n">tzset</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>6,7行目を接続先WiFiのSSID, Passwordに書き直します。</p>
+<p><code>pin_config.h</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#pragma once</span>
+
+<span class="c1">// #define WIFI_SSID                    &quot;Your-ssid&quot;</span>
+<span class="c1">// #define WIFI_PASSWORD                &quot;Your-password&quot;</span>
+
+<span class="hll"><span class="cp">#define WIFI_SSID                    &quot;Your-ssid&quot;</span>
+</span><span class="hll"><span class="cp">#define WIFI_PASSWORD                &quot;Your-password&quot;</span>
+</span>
+<span class="cp">#define WIFI_CONNECT_WAIT_MAX        (30 * 1000)</span>
+
+<span class="cp">#define NTP_SERVER1                  &quot;pool.ntp.org&quot;</span>
+<span class="cp">#define NTP_SERVER2                  &quot;time.nist.gov&quot;</span>
+<span class="cp">#define GMT_OFFSET_SEC               0</span>
+<span class="cp">#define DAY_LIGHT_OFFSET_SEC         0</span>
+<span class="c1">// if CUSTOM_TIMEZONE is not defined then TIMEZONE API used based on IP, check zones.h</span>
+<span class="c1">// #define CUSTOM_TIMEZONE             &quot;Europe/London&quot;</span>
+
+<span class="cm">/* Automatically update local time */</span>
+<span class="cp">#define GET_TIMEZONE_API             &quot;https:</span><span class="c1">//ipapi.co/timezone/&quot;</span>
+
+<span class="cm">/* LCD CONFIG */</span>
+<span class="c1">// Too low or too high pixel clock may cause screen mosaic</span>
+<span class="cp">#define EXAMPLE_LCD_PIXEL_CLOCK_HZ   (16 * 1000 * 1000)</span>
+<span class="c1">// The pixel number in horizontal and vertical</span>
+<span class="cp">#define EXAMPLE_LCD_H_RES            320</span>
+<span class="cp">#define EXAMPLE_LCD_V_RES            170</span>
+<span class="cp">#define LVGL_LCD_BUF_SIZE            (EXAMPLE_LCD_H_RES * EXAMPLE_LCD_V_RES)</span>
+<span class="cp">#define EXAMPLE_PSRAM_DATA_ALIGNMENT 64</span>
+
+<span class="cm">/*ESP32S3*/</span>
+<span class="cp">#define PIN_LCD_BL                   38</span>
+
+<span class="cp">#define PIN_LCD_D0                   39</span>
+<span class="cp">#define PIN_LCD_D1                   40</span>
+<span class="cp">#define PIN_LCD_D2                   41</span>
+<span class="cp">#define PIN_LCD_D3                   42</span>
+<span class="cp">#define PIN_LCD_D4                   45</span>
+<span class="cp">#define PIN_LCD_D5                   46</span>
+<span class="cp">#define PIN_LCD_D6                   47</span>
+<span class="cp">#define PIN_LCD_D7                   48</span>
+
+<span class="cp">#define PIN_POWER_ON                 15</span>
+
+<span class="cp">#define PIN_LCD_RES                  5</span>
+<span class="cp">#define PIN_LCD_CS                   6</span>
+<span class="cp">#define PIN_LCD_DC                   7</span>
+<span class="cp">#define PIN_LCD_WR                   8</span>
+<span class="cp">#define PIN_LCD_RD                   9</span>
+
+<span class="cp">#define PIN_BUTTON_1                 0</span>
+<span class="cp">#define PIN_BUTTON_2                 14</span>
+<span class="cp">#define PIN_BAT_VOLT                 4</span>
+
+<span class="cp">#define PIN_IIC_SCL                  17</span>
+<span class="cp">#define PIN_IIC_SDA                  18</span>
+
+<span class="cp">#define PIN_TOUCH_INT                16</span>
+<span class="cp">#define PIN_TOUCH_RES                21</span>
+
+<span class="cm">/* External expansion */</span>
+<span class="cp">#define PIN_SD_CMD                   13</span>
+<span class="cp">#define PIN_SD_CLK                   11</span>
+<span class="cp">#define PIN_SD_D0                    12</span>
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="../../javascripts/version-select.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
