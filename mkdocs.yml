@@ -15,7 +15,7 @@ markdown_extensions:
   - fontawesome_markdown
   - pymdownx.highlight:
       use_pygments: true
-      noclasses: true
+      noclasses: false
       pygments_style: monokai
       linenums: true
   - pymdownx.superfences
@@ -27,14 +27,15 @@ extra_css:
 #  - "https://fonts.googleapis.com/css?family=Open+Sans:600,800"
   - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
 #  - "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css"
-  - 'stylesheets/extra.css'
   - "css/version-select.css"
-  - "css/extra.css"
   - "css/custom.css"
 nav:
   - Home: "index.md"
-  - 1.Arduino:
+  - Arduino:
     - Hello World: "arduino/helloworld.md"
+    - ボタン: "arduino/button.md"
+    - 円の描画: "arduino/circle.md"
+    - 画面の切替: "arduino/screen.md"
 extra_javascript:
   - javascripts/version-select.js
   - javascripts/extra.js

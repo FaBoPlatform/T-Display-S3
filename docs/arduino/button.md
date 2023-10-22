@@ -1,25 +1,23 @@
-# Hello World
+# Button
 
 ## ChatGPTによる解説
 
 |行数|処理|ChatGPTによる解説|
 |:--|:--|:--|
-| - | LVGLについて | <a href="https://chat.openai.com/share/2aa447f8-bf58-4562-a85e-99668d358283" target="_new">ChatGPTによる解説</a>|
-|107〜116行目| LVGLグラフィックライブラリの初期化 |<a href="https://chat.openai.com/share/b30b3f05-d247-4cf1-949b-d0824a58a6dd" target="_new">ChatGPTによる解説</a>|
-| 119〜128行目 | Textを表示するためのlabelの初期化 | <a href="https://chat.openai.com/share/24789eef-584b-4d53-9cdb-4a799cf1d9c2" target="_new">ChatGPTによる解説</a>|
+| - | OneButtonの解説 | <a href="https://chat.openai.com/share/e3f159a7-0c69-402e-93cb-a3add613fa6c" target="_new">ChatGPTによる解説</a>|
 
 ## ファイル
 
 |No|作成するファイル名|
 |:--|:--|
-|1| HelloWorld.ino |
+|1| Button.ino |
 |2| pin_config.h |
 
 ## ソースコード
 
-`HelloWorld.ino`
+`Button.ino`
 
-```c hl_lines="15-16 106-116 119-127"
+```c hl_lines="20-21 134-156 162-163"
 #include "Arduino.h"
 #include "lvgl.h"
 #include "esp_lcd_panel_io.h"
@@ -27,6 +25,7 @@
 #include "esp_lcd_panel_vendor.h"
 #include "pin_config.h"
 #include "esp_sntp.h"
+#include "OneButton.h" /* https://github.com/mathertel/OneButton.git */
 
 // グローバル変数
 esp_lcd_panel_io_handle_t io_handle = NULL;
@@ -36,7 +35,10 @@ static lv_color_t *lv_disp_buf;
 static bool is_initialized_lvgl = false;
 lv_style_t log_style;
 lv_obj_t *log_label;
-int i = 0;
+
+// OneButtonの定義
+OneButton button1(PIN_BUTTON_1, true);
+OneButton button2(PIN_BUTTON_2, true);
 
 /**
  * LVGLがデータのフラッシュの準備ができたときに通知
@@ -146,15 +148,39 @@ void setup() {
     lv_obj_set_width(log_label, LV_PCT(100));
     lv_label_set_long_mode(log_label, LV_LABEL_LONG_SCROLL);
     lv_label_set_recolor(log_label, true);
-    lv_label_set_text(log_label, "");
+    lv_label_set_text(log_label, "Please click button");
+
+    // OneButtonの処理の実装
+    button1.attachClick([]() {
+      lv_label_set_text(log_label, "Button1 Click");
+    });
+
+    button1.attachDoubleClick([]()  {
+      lv_label_set_text(log_label, "Button1 Double Click");
+    });
+
+    button1.attachDuringLongPress([]()  {
+      lv_label_set_text(log_label, "Button1 LongPressed");
+    });
+
+    button2.attachClick([]() {
+      lv_label_set_text(log_label, "Button2 Click");
+    });
+
+    button2.attachDuringLongPress([]()  {
+      lv_label_set_text(log_label, "Button2 LongPressed");
+    });
+
+    button2.attachDoubleClick([]()  {
+      lv_label_set_text(log_label, "Button2 Double Click");
+    });
 }
 
 void loop() {   
-    i++;
     lv_timer_handler();
-    String msg = "Hello World\n" + String(i);
-    lv_label_set_text(log_label, msg.c_str());
-    delay(100);
+
+    button1.tick();
+    button2.tick();
 }
 ```
 

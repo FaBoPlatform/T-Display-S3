@@ -1,25 +1,23 @@
-# Hello World
+# 画面の切替
 
 ## ChatGPTによる解説
 
 |行数|処理|ChatGPTによる解説|
 |:--|:--|:--|
-| - | LVGLについて | <a href="https://chat.openai.com/share/2aa447f8-bf58-4562-a85e-99668d358283" target="_new">ChatGPTによる解説</a>|
-|107〜116行目| LVGLグラフィックライブラリの初期化 |<a href="https://chat.openai.com/share/b30b3f05-d247-4cf1-949b-d0824a58a6dd" target="_new">ChatGPTによる解説</a>|
-| 119〜128行目 | Textを表示するためのlabelの初期化 | <a href="https://chat.openai.com/share/24789eef-584b-4d53-9cdb-4a799cf1d9c2" target="_new">ChatGPTによる解説</a>|
+| 21-26行目,58-69行目,166行目,168-181行目| LVGLについて | <a href="https://chat.openai.com/share/aac8b5f3-b8db-4f89-b892-5761969d299c" target="_new">ChatGPTによる解説</a>|
 
 ## ファイル
 
 |No|作成するファイル名|
 |:--|:--|
-|1| HelloWorld.ino |
+|1| Screen.ino |
 |2| pin_config.h |
 
 ## ソースコード
 
-`HelloWorld.ino`
+`Screen.ino`
 
-```c hl_lines="15-16 106-116 119-127"
+```c hl_lines="21-26 58-69 166 168-181"
 #include "Arduino.h"
 #include "lvgl.h"
 #include "esp_lcd_panel_io.h"
@@ -27,6 +25,7 @@
 #include "esp_lcd_panel_vendor.h"
 #include "pin_config.h"
 #include "esp_sntp.h"
+#include "OneButton.h" /* https://github.com/mathertel/OneButton.git */
 
 // グローバル変数
 esp_lcd_panel_io_handle_t io_handle = NULL;
@@ -36,7 +35,18 @@ static lv_color_t *lv_disp_buf;
 static bool is_initialized_lvgl = false;
 lv_style_t log_style;
 lv_obj_t *log_label;
-int i = 0;
+lv_style_t circle_style;
+lv_obj_t *circle_obj;
+
+// 切り替える画面を定義
+enum UI_PAGE {
+    PAGE_TEXT,
+    PAGE_CIRCLE,
+};
+UI_PAGE currentPage = PAGE_TEXT;
+
+// OneButtonの定義
+OneButton button1(PIN_BUTTON_1, true);
 
 /**
  * LVGLがデータのフラッシュの準備ができたときに通知
@@ -60,6 +70,22 @@ static void example_lvgl_flush_cb(lv_disp_drv_t *drv, const lv_area_t *area, lv_
     int offsety1 = area->y1;
     int offsety2 = area->y2;
     esp_lcd_panel_draw_bitmap(panel_handle, offsetx1, offsety1, offsetx2 + 1, offsety2 + 1, color_map);
+}
+
+/**
+ * 画面の切り替え処理
+ */
+void updateScreen() {
+    switch (currentPage) {
+        case PAGE_TEXT:
+            lv_obj_clear_flag(log_label, LV_OBJ_FLAG_HIDDEN); 
+            lv_obj_add_flag(circle_obj, LV_OBJ_FLAG_HIDDEN);
+            break;
+        case PAGE_CIRCLE:
+            lv_obj_add_flag(log_label, LV_OBJ_FLAG_HIDDEN);
+            lv_obj_clear_flag(circle_obj, LV_OBJ_FLAG_HIDDEN);
+            break;
+    }
 }
 
 void setup() {
@@ -146,15 +172,39 @@ void setup() {
     lv_obj_set_width(log_label, LV_PCT(100));
     lv_label_set_long_mode(log_label, LV_LABEL_LONG_SCROLL);
     lv_label_set_recolor(log_label, true);
-    lv_label_set_text(log_label, "");
+    lv_label_set_text(log_label, "Please click button");
+
+    // 円オブジェクトの作成
+    circle_obj = lv_obj_create(lv_scr_act());
+    lv_style_init(&circle_style);
+    lv_style_set_bg_color(&circle_style, lv_color_hex(0x00FFF)); 
+    lv_style_set_radius(&circle_style, LV_RADIUS_CIRCLE);
+    lv_style_set_bg_opa(&circle_style, LV_OPA_COVER);
+    lv_obj_add_style(circle_obj, &circle_style, 0);
+    lv_obj_set_size(circle_obj, 60, 60); 
+    lv_obj_align(circle_obj, LV_ALIGN_TOP_LEFT, EXAMPLE_LCD_H_RES/2 - 30, EXAMPLE_LCD_V_RES/2 - 30); // 画面の上部から30ピクセル下に位置
+    lv_obj_add_flag(circle_obj, LV_OBJ_FLAG_HIDDEN); 
+
+    button1.attachClick([]() {
+        switch (currentPage) {
+            case PAGE_TEXT:
+                currentPage = PAGE_CIRCLE;
+                break;
+            case PAGE_CIRCLE:
+                currentPage = PAGE_TEXT;
+                break;
+        }
+        updateScreen();
+    });
+
+    // 初期表示を設定
+    updateScreen();
 }
 
 void loop() {   
-    i++;
     lv_timer_handler();
-    String msg = "Hello World\n" + String(i);
-    lv_label_set_text(log_label, msg.c_str());
-    delay(100);
+
+    button1.tick();
 }
 ```
 

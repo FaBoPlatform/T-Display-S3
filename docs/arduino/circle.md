@@ -1,25 +1,23 @@
-# Hello World
+# 円の描画
 
 ## ChatGPTによる解説
 
 |行数|処理|ChatGPTによる解説|
 |:--|:--|:--|
-| - | LVGLについて | <a href="https://chat.openai.com/share/2aa447f8-bf58-4562-a85e-99668d358283" target="_new">ChatGPTによる解説</a>|
-|107〜116行目| LVGLグラフィックライブラリの初期化 |<a href="https://chat.openai.com/share/b30b3f05-d247-4cf1-949b-d0824a58a6dd" target="_new">ChatGPTによる解説</a>|
-| 119〜128行目 | Textを表示するためのlabelの初期化 | <a href="https://chat.openai.com/share/24789eef-584b-4d53-9cdb-4a799cf1d9c2" target="_new">ChatGPTによる解説</a>|
+| 135〜145行目, 155〜167行目 | LVGLについて | <a href="https://chat.openai.com/share/62dbc753-1d05-4067-a632-cbe09d73daf0" target="_new">ChatGPTによる解説</a>|
 
 ## ファイル
 
 |No|作成するファイル名|
 |:--|:--|
-|1| HelloWorld.ino |
+|1| Circle.ino |
 |2| pin_config.h |
 
 ## ソースコード
 
-`HelloWorld.ino`
+`Circle.ino`
 
-```c hl_lines="15-16 106-116 119-127"
+```c hl_lines="17-21 136-145 155-167"
 #include "Arduino.h"
 #include "lvgl.h"
 #include "esp_lcd_panel_io.h"
@@ -36,6 +34,12 @@ static lv_color_t *lv_disp_buf;
 static bool is_initialized_lvgl = false;
 lv_style_t log_style;
 lv_obj_t *log_label;
+lv_obj_t *circle_obj;
+lv_style_t circle_style;
+int circle_x_pos = EXAMPLE_LCD_H_RES - 30; // 画面の右端から少し左に開始する位置
+enum Direction { LEFT, RIGHT };
+Direction circle_direction = RIGHT;
+
 int i = 0;
 
 /**
@@ -147,6 +151,18 @@ void setup() {
     lv_label_set_long_mode(log_label, LV_LABEL_LONG_SCROLL);
     lv_label_set_recolor(log_label, true);
     lv_label_set_text(log_label, "");
+
+    // LVGLの円のスタイルを追加
+    lv_style_init(&circle_style);
+    lv_style_set_bg_color(&circle_style, lv_color_hex(0x00FFF)); // この例では円を紫色にしています
+    lv_style_set_radius(&circle_style, LV_RADIUS_CIRCLE);
+    lv_style_set_bg_opa(&circle_style, LV_OPA_COVER);
+
+    // LVGLの円のオブジェクトを作成
+    circle_obj = lv_obj_create(lv_scr_act());
+    lv_obj_add_style(circle_obj, &circle_style, 0);
+    lv_obj_set_size(circle_obj, 60, 60); // この例では円のサイズを60x60に設定しています
+    lv_obj_align(circle_obj, LV_ALIGN_TOP_LEFT, circle_x_pos, 30); // 画面の上部から30ピクセル下に位置
 }
 
 void loop() {   
@@ -154,6 +170,22 @@ void loop() {
     lv_timer_handler();
     String msg = "Hello World\n" + String(i);
     lv_label_set_text(log_label, msg.c_str());
+
+    // 移動方向に応じて円を移動
+    if (circle_direction == RIGHT) {
+        circle_x_pos += 5; // 5ピクセルごとに右に移動
+        if (circle_x_pos >= EXAMPLE_LCD_H_RES - 60) { // 画面の右端に到達したら
+            circle_direction = LEFT; // 方向を左に変更
+        }
+    } else {
+        circle_x_pos -= 5; // 5ピクセルごとに左に移動
+        if (circle_x_pos <= 0) { // 画面の左端に到達したら
+            circle_direction = RIGHT; // 方向を右に変更
+        }
+    }
+    
+    lv_obj_align(circle_obj, LV_ALIGN_TOP_LEFT, circle_x_pos, 30);
+
     delay(100);
 }
 ```
