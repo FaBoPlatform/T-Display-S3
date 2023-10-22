@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../helloworld/">
       
       
-        <link rel="next" href="../button/">
+        <link rel="next" href="../circle/">
       
       <link rel="icon" href="../../favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-9.1.3">
     
     
       
-        <title>Hello World - FaBo T-Display-S3 Docs</title>
+        <title>ボタン - FaBo T-Display-S3 Docs</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hello-world" class="md-skip">
+        <a href="#button" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hello World
+              ボタン
             
           </span>
         </div>
@@ -201,6 +201,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../helloworld/" class="md-nav__link">
+        Hello World
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -213,12 +227,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Hello World
+          ボタン
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Hello World
+        ボタン
       </a>
       
         
@@ -261,20 +275,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../button/" class="md-nav__link">
-        ボタン
-      </a>
     </li>
   
 
@@ -376,7 +376,7 @@
                   
 
 
-<h1 id="hello-world">Hello World</h1>
+<h1 id="button">Button</h1>
 <h2 id="chatgpt">ChatGPTによる解説</h2>
 <table>
 <thead>
@@ -389,18 +389,8 @@
 <tbody>
 <tr>
 <td align="left">-</td>
-<td align="left">LVGLについて</td>
-<td align="left"><a href="https://chat.openai.com/share/2aa447f8-bf58-4562-a85e-99668d358283" target="_new">ChatGPTによる解説</a></td>
-</tr>
-<tr>
-<td align="left">107〜116行目</td>
-<td align="left">LVGLグラフィックライブラリの初期化</td>
-<td align="left"><a href="https://chat.openai.com/share/b30b3f05-d247-4cf1-949b-d0824a58a6dd" target="_new">ChatGPTによる解説</a></td>
-</tr>
-<tr>
-<td align="left">119〜128行目</td>
-<td align="left">Textを表示するためのlabelの初期化</td>
-<td align="left"><a href="https://chat.openai.com/share/24789eef-584b-4d53-9cdb-4a799cf1d9c2" target="_new">ChatGPTによる解説</a></td>
+<td align="left">OneButtonの解説</td>
+<td align="left"><a href="https://chat.openai.com/share/e3f159a7-0c69-402e-93cb-a3add613fa6c" target="_new">ChatGPTによる解説</a></td>
 </tr>
 </tbody>
 </table>
@@ -415,7 +405,7 @@
 <tbody>
 <tr>
 <td align="left">1</td>
-<td align="left">HelloWorld.ino</td>
+<td align="left">Button.ino</td>
 </tr>
 <tr>
 <td align="left">2</td>
@@ -424,7 +414,7 @@
 </tbody>
 </table>
 <h2 id="_2">ソースコード</h2>
-<p><code>HelloWorld.ino</code></p>
+<p><code>Button.ino</code></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
 <span class="normal">  2</span>
 <span class="normal">  3</span>
@@ -560,13 +550,42 @@
 <span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
-<span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Arduino.h&quot;</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Arduino.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lvgl.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_lcd_panel_io.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_lcd_panel_ops.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_lcd_panel_vendor.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pin_config.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_sntp.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;OneButton.h&quot;</span><span class="c1"> /* https://github.com/mathertel/OneButton.git */</span>
 
 <span class="c1">// グローバル変数</span>
 <span class="n">esp_lcd_panel_io_handle_t</span><span class="w"> </span><span class="n">io_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
@@ -574,10 +593,13 @@
 <span class="k">static</span><span class="w"> </span><span class="n">lv_disp_drv_t</span><span class="w"> </span><span class="n">disp_drv</span><span class="p">;</span>
 <span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="o">*</span><span class="n">lv_disp_buf</span><span class="p">;</span>
 <span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_initialized_lvgl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
-<span class="hll"><span class="n">lv_style_t</span><span class="w"> </span><span class="n">log_style</span><span class="p">;</span>
-</span><span class="hll"><span class="n">lv_obj_t</span><span class="w"> </span><span class="o">*</span><span class="n">log_label</span><span class="p">;</span>
-</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">lv_style_t</span><span class="w"> </span><span class="n">log_style</span><span class="p">;</span>
+<span class="n">lv_obj_t</span><span class="w"> </span><span class="o">*</span><span class="n">log_label</span><span class="p">;</span>
 
+<span class="c1">// OneButtonの定義</span>
+<span class="hll"><span class="n">OneButton</span><span class="w"> </span><span class="nf">button1</span><span class="p">(</span><span class="n">PIN_BUTTON_1</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+</span><span class="hll"><span class="n">OneButton</span><span class="w"> </span><span class="nf">button2</span><span class="p">(</span><span class="n">PIN_BUTTON_2</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+</span>
 <span class="cm">/**</span>
 <span class="cm"> * LVGLがデータのフラッシュの準備ができたときに通知</span>
 <span class="cm"> */</span>
@@ -665,37 +687,61 @@
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="c1">// LVGLグラフィックライブラリの初期化</span>
-<span class="hll"><span class="w">    </span><span class="n">lv_init</span><span class="p">();</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_disp_buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">lv_color_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">heap_caps_malloc</span><span class="p">(</span><span class="n">LVGL_LCD_BUF_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">lv_color_t</span><span class="p">),</span><span class="w"> </span><span class="n">MALLOC_CAP_DMA</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">MALLOC_CAP_INTERNAL</span><span class="p">);</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_disp_draw_buf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">disp_buf</span><span class="p">,</span><span class="w"> </span><span class="n">lv_disp_buf</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">LVGL_LCD_BUF_SIZE</span><span class="p">);</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_disp_drv_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">disp_drv</span><span class="p">);</span>
-</span><span class="hll"><span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">hor_res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EXAMPLE_LCD_H_RES</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">ver_res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EXAMPLE_LCD_V_RES</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">flush_cb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">example_lvgl_flush_cb</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">draw_buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">disp_buf</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">user_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">panel_handle</span><span class="p">;</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_disp_drv_register</span><span class="p">(</span><span class="o">&amp;</span><span class="n">disp_drv</span><span class="p">);</span>
-</span><span class="hll"><span class="w">    </span><span class="n">is_initialized_lvgl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
-</span>
+<span class="w">    </span><span class="n">lv_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">lv_disp_buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">lv_color_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">heap_caps_malloc</span><span class="p">(</span><span class="n">LVGL_LCD_BUF_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">lv_color_t</span><span class="p">),</span><span class="w"> </span><span class="n">MALLOC_CAP_DMA</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">MALLOC_CAP_INTERNAL</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_disp_draw_buf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">disp_buf</span><span class="p">,</span><span class="w"> </span><span class="n">lv_disp_buf</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">LVGL_LCD_BUF_SIZE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_disp_drv_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">disp_drv</span><span class="p">);</span>
+<span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">hor_res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EXAMPLE_LCD_H_RES</span><span class="p">;</span>
+<span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">ver_res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EXAMPLE_LCD_V_RES</span><span class="p">;</span>
+<span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">flush_cb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">example_lvgl_flush_cb</span><span class="p">;</span>
+<span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">draw_buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">disp_buf</span><span class="p">;</span>
+<span class="w">    </span><span class="n">disp_drv</span><span class="p">.</span><span class="n">user_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">panel_handle</span><span class="p">;</span>
+<span class="w">    </span><span class="n">lv_disp_drv_register</span><span class="p">(</span><span class="o">&amp;</span><span class="n">disp_drv</span><span class="p">);</span>
+<span class="w">    </span><span class="n">is_initialized_lvgl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
 <span class="w">    </span><span class="c1">// LVGLのラベルを作成し、ディスプレイにスタイルを追加</span>
-<span class="hll"><span class="w">    </span><span class="n">log_label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lv_label_create</span><span class="p">(</span><span class="n">lv_scr_act</span><span class="p">());</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_style_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">log_style</span><span class="p">);</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_style_set_text_color</span><span class="p">(</span><span class="o">&amp;</span><span class="n">log_style</span><span class="p">,</span><span class="w"> </span><span class="n">lv_color_hex</span><span class="p">(</span><span class="mh">0xFF10F0</span><span class="p">));</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_obj_add_style</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">log_style</span><span class="p">,</span><span class="w"> </span><span class="n">LV_PART_MAIN</span><span class="p">);</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_obj_align</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">LV_ALIGN_TOP_LEFT</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_obj_set_width</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">LV_PCT</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_label_set_long_mode</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">LV_LABEL_LONG_SCROLL</span><span class="p">);</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_label_set_recolor</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
-</span><span class="hll"><span class="w">    </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">log_label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lv_label_create</span><span class="p">(</span><span class="n">lv_scr_act</span><span class="p">());</span>
+<span class="w">    </span><span class="n">lv_style_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">log_style</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_style_set_text_color</span><span class="p">(</span><span class="o">&amp;</span><span class="n">log_style</span><span class="p">,</span><span class="w"> </span><span class="n">lv_color_hex</span><span class="p">(</span><span class="mh">0xFF10F0</span><span class="p">));</span>
+<span class="w">    </span><span class="n">lv_obj_add_style</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">log_style</span><span class="p">,</span><span class="w"> </span><span class="n">LV_PART_MAIN</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_obj_align</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">LV_ALIGN_TOP_LEFT</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_obj_set_width</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">LV_PCT</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+<span class="w">    </span><span class="n">lv_label_set_long_mode</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">LV_LABEL_LONG_SCROLL</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_label_set_recolor</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Please click button&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// OneButtonの処理の実装</span>
+<span class="hll"><span class="w">    </span><span class="n">button1</span><span class="p">.</span><span class="n">attachClick</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Button1 Click&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">});</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="n">button1</span><span class="p">.</span><span class="n">attachDoubleClick</span><span class="p">([]()</span><span class="w">  </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Button1 Double Click&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">});</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="n">button1</span><span class="p">.</span><span class="n">attachDuringLongPress</span><span class="p">([]()</span><span class="w">  </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Button1 LongPressed&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">});</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="n">button2</span><span class="p">.</span><span class="n">attachClick</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Button2 Click&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">});</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="n">button2</span><span class="p">.</span><span class="n">attachDuringLongPress</span><span class="p">([]()</span><span class="w">  </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Button2 LongPressed&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">});</span>
+</span><span class="hll">
+</span><span class="hll"><span class="w">    </span><span class="n">button2</span><span class="p">.</span><span class="n">attachDoubleClick</span><span class="p">([]()</span><span class="w">  </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Button2 Double Click&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">});</span>
 </span><span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">   </span>
-<span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
 <span class="w">    </span><span class="n">lv_timer_handler</span><span class="p">();</span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="w">    </span><span class="n">lv_label_set_text</span><span class="p">(</span><span class="n">log_label</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
-<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
-<span class="p">}</span>
+
+<span class="hll"><span class="w">    </span><span class="n">button1</span><span class="p">.</span><span class="n">tick</span><span class="p">();</span>
+</span><span class="hll"><span class="w">    </span><span class="n">button2</span><span class="p">.</span><span class="n">tick</span><span class="p">();</span>
+</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><code>pin_config.h</code></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
